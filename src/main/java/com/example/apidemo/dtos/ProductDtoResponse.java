@@ -16,7 +16,7 @@ public class ProductDtoResponse {
 
     private Long id;
     private String name;
-    private Long order_id;
+    private Order order;
     private Category category;
     private Boolean isActive;
 }
