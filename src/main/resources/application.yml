@@ -1,0 +1,12 @@
+spring:
+  datasource:
+    password: panha
+    url: jdbc:postgresql://localhost:5432/ApiDemo
+    username: postgres
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+server:
+  port: 8081
+
