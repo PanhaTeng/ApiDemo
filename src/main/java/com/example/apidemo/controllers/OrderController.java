@@ -7,14 +7,17 @@ import com.example.apidemo.services.impl.ProductServiceImpl;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("/api/orders")
+@PreAuthorize("hasAnyRole('ADMIN', 'MANAGER')")
 public class OrderController {
     private final OrderServiceImpl  orderService;
     @GetMapping
+
     public ResponseEntity<?> getAll() {
         return ResponseEntity.ok(orderService.findAllProDto());
     }

@@ -2,8 +2,10 @@ package com.example.apidemo.services.impl;
 
 import com.example.apidemo.dtos.ProductDtoResponse;
 import com.example.apidemo.models.Category;
+import com.example.apidemo.models.Order;
 import com.example.apidemo.models.Product;
 import com.example.apidemo.repositories.CategoryRepository;
+import com.example.apidemo.repositories.OrderRepository;
 import com.example.apidemo.repositories.ProductRepository;
 import com.example.apidemo.services.ProductService;
 import lombok.RequiredArgsConstructor;
@@ -17,6 +19,7 @@ import java.util.List;
 public class ProductServiceImpl implements ProductService {
     private final ProductRepository productRepository;
     private final CategoryRepository categoryRepository;
+    private final OrderRepository orderRepository;
     @Override
     public Product findById(Long id) {
         return productRepository.findByIdAndIsActiveTrue(id).orElse(null);
@@ -61,13 +64,14 @@ public class ProductServiceImpl implements ProductService {
     public ProductDtoResponse findProDtoById(Long id) {
         var product=productRepository.findByIdAndIsActiveTrue(id).orElse(null);
         Category category=categoryRepository.findByIdAndIsActiveTrue(product.getCategory_id()).orElse(null);
+        Order order=orderRepository.findByIdAndIsActiveTrue(product.getOrder_id()).orElse(null);
         if(product==null){
             return null;
         }
         ProductDtoResponse productDtoResponse=new ProductDtoResponse();
         productDtoResponse.setId(product.getId());
         productDtoResponse.setName(product.getName());
-        productDtoResponse.setOrder_id(product.getOrder_id());
+        productDtoResponse.setOrder(order);
         productDtoResponse.setCategory(category);
         productDtoResponse.setIsActive(product.getIsActive());
         return productDtoResponse;
@@ -81,11 +85,12 @@ public class ProductServiceImpl implements ProductService {
         }
         List<ProductDtoResponse> productDtoResponse=new ArrayList<>();
         for(Product product:products){
+            Order order=orderRepository.findByIdAndIsActiveTrue(product.getOrder_id()).orElse(null);
             Category category=categoryRepository.findByIdAndIsActiveTrue(product.getCategory_id()).orElse(null);
             var productDtoResponse1=new ProductDtoResponse();
             productDtoResponse1.setId(product.getId());
             productDtoResponse1.setName(product.getName());
-            productDtoResponse1.setOrder_id(product.getOrder_id());
+            productDtoResponse1.setOrder(order);
             productDtoResponse1.setCategory(category);
             productDtoResponse1.setIsActive(product.getIsActive());
             productDtoResponse.add(productDtoResponse1);

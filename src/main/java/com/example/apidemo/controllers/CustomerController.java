@@ -5,11 +5,13 @@ import com.example.apidemo.services.impl.CustomerServiceImpl;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("/api/customers")
+@PreAuthorize("hasAnyRole('ADMIN', 'MANAGER')")
 public class CustomerController {
     private final CustomerServiceImpl customerService;
 
