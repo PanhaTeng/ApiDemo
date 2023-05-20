@@ -14,15 +14,15 @@ import io.swagger.v3.oas.annotations.servers.Server;
         info = @Info(
                 contact = @Contact(
                         name = "Tengpanha",
-                        email = "contact@aliboucoding.com",
-                        url = "https://aliboucoding.com/course"
+                        email = "contact@aliboucoding.com"
+//                        url = "https://aliboucoding.com/course"
                 ),
                 description = "OpenApi documentation for Spring Security",
                 title = "OpenApi specification - Tengpanha",
                 version = "1.0",
                 license = @License(
-                        name = "Licence name",
-                        url = "https://some-url.com"
+                        name = "Licence name"
+//                        url = "https://some-url.com"
                 ),
                 termsOfService = "Terms of service"
         ),

@@ -7,11 +7,13 @@ import com.example.apidemo.services.impl.ProductServiceImpl;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("/api/products")
+@PreAuthorize("hasAnyRole('ADMIN', 'MANAGER')")
 public class ProductController {
     private final ProductServiceImpl productService;
     @GetMapping
