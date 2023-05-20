@@ -7,7 +7,6 @@ import com.example.apidemo.services.impl.ProductServiceImpl;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -16,13 +15,12 @@ import org.springframework.web.bind.annotation.*;
 public class OrderController {
     private final OrderServiceImpl  orderService;
     @GetMapping
-    @PreAuthorize(value = "hasRole('ROLE_USER')")
+
     public ResponseEntity<?> getAll() {
         return ResponseEntity.ok(orderService.findAllProDto());
     }
 
     @GetMapping("/{id}")
-    @PreAuthorize(value = "hasRole('ROLE_USER')")
     public ResponseEntity<?> getById(@PathVariable Long id) {
         return ResponseEntity.ok(orderService.findProDtoById(id));
     }
