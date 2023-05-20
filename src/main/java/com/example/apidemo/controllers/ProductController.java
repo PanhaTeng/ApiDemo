@@ -1,8 +1,6 @@
 package com.example.apidemo.controllers;
 
-import com.example.apidemo.models.Category;
 import com.example.apidemo.models.Product;
-import com.example.apidemo.services.impl.CategoryServiceImpl;
 import com.example.apidemo.services.impl.ProductServiceImpl;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;

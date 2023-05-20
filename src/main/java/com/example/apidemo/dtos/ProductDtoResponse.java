@@ -2,7 +2,6 @@ package com.example.apidemo.dtos;
 
 import com.example.apidemo.models.Category;
 import com.example.apidemo.models.Order;
-import jakarta.persistence.Column;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;

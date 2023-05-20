@@ -2,7 +2,6 @@ package com.example.apidemo.dtos;
 
 import com.example.apidemo.models.Order;
 import com.example.apidemo.utils.Gender;
-import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;

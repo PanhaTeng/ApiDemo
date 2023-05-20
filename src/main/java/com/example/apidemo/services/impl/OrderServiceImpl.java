@@ -1,11 +1,8 @@
 package com.example.apidemo.services.impl;
 
 import com.example.apidemo.dtos.OrderDtoResponse;
-import com.example.apidemo.dtos.ProductDtoResponse;
-import com.example.apidemo.models.Category;
 import com.example.apidemo.models.Customer;
 import com.example.apidemo.models.Order;
-import com.example.apidemo.models.Product;
 import com.example.apidemo.repositories.CustomerRepository;
 import com.example.apidemo.repositories.OrderRepository;
 import com.example.apidemo.services.OrderService;

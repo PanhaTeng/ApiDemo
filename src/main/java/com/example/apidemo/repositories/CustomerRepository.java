@@ -1,7 +1,6 @@
 package com.example.apidemo.repositories;
 
 import com.example.apidemo.models.Customer;
-import com.example.apidemo.models.Order;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;

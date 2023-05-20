@@ -1,9 +1,7 @@
 package com.example.apidemo.controllers;
 
 import com.example.apidemo.models.Order;
-import com.example.apidemo.models.Product;
 import com.example.apidemo.services.impl.OrderServiceImpl;
-import com.example.apidemo.services.impl.ProductServiceImpl;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
