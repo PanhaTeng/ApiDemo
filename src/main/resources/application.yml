@@ -1,8 +1,8 @@
 spring:
   datasource:
-    password: panha
-    url: jdbc:postgresql://localhost:5432/ApiDemo
-    username: postgres
+    password: Root.Com
+    url: jdbc:postgresql://api-demo.postgres.database.azure.com:5432/api-demo?user=panha&password=Root.Com&sslmode=require
+    username: panha
     driver-class-name: org.postgresql.Driver
   jpa:
     hibernate:
